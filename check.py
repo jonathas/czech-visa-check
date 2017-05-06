@@ -24,8 +24,7 @@ class CzechVisaCheck:
 
     def extract_sheet_url(self):
         """Extracts the current application sheet url from the page"""
-        page = requests.get(
-            self.mvcr_url + 'article/status-of-your-application.aspx')
+        page = requests.get(self.mvcr_url + 'article/status-of-your-application.aspx')
         tree = html.fromstring(page.content)
         file_link = tree.xpath('//div[@id="content"]/div/ul/li/a/@href')
         return self.mvcr_url + file_link[0]
