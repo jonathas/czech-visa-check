@@ -52,21 +52,24 @@ class CzechVisaCheck:
     def sendmail(self, config, result):
         """Sends an email with the result"""
         smtp = config['smtp']
-        header = 'From: %s' % smtp['from']
-        header += 'To: %s' % smtp['to']
-        header += 'Subject: %s' % smtp['subject']
+        header = 'From: %s\n' % smtp['from']
+        header += 'To: %s\n' % smtp['to']
+        header += 'Subject: %s\n\n' % smtp['subject']
 
         if result:
-            message = header + config['success_msg']
+            body = config['success_msg'].format(config['application'])
         else:
-            message = header + config['fail_msg']
+            body = config['fail_msg'].format(config['application'])
+
+        message = header + body
 
         server = smtplib.SMTP(smtp['host'] + ':' + smtp['port'])
         server.starttls()
         server.login(smtp['user'], smtp['password'])
         problems = server.sendmail(smtp['from'], smtp['to'], message)
         server.quit()
-        return problems
+        if not problems:
+            print("E-Mail sent successfully.")
 
 
 czech_this_out = CzechVisaCheck()

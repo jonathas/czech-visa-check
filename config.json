@@ -7,8 +7,8 @@
         "port": "587",
         "user": "",
         "password": "",
-        "from": "",
-        "to": "",
-        "subject": "Ministerstvo vnitra České republiky - Status of your application"
+        "from": "Jon Ribeiro <youremail@email.com>",
+        "to": "Jon Ribeiro <youremail@email.com>",
+        "subject": "Ministerstvo vnitra Ceske republiky - Status of your application"
     }
 }
