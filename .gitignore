@@ -97,4 +97,4 @@ ENV/
 # mkdocs documentation
 /site
 
-*.xls
+*.xls*
