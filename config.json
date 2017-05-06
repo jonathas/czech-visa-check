@@ -1,13 +1,14 @@
 {
     "application": "Your application number",
+    "success_msg": "Your application {0} has been aproved! :)",
+    "fail_msg": "Your application {0} is not there yet :(",
     "smtp": {
         "host": "smtp.gmail.com",
-        "port": 587,
+        "port": "587",
         "user": "",
         "password": "",
         "from": "",
         "to": "",
-        "subject": "",
-        "message": ""
+        "subject": "Ministerstvo vnitra České republiky - Status of your application"
     }
 }
